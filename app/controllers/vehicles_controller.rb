@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /vehicles or /vehicles.json
   def index
@@ -23,7 +24,7 @@ class VehiclesController < ApplicationController
 
   # POST /vehicles or /vehicles.json
   def create
-    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle = current_user.vehicles.new(vehicle_params)
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.save
@@ -38,6 +39,7 @@ class VehiclesController < ApplicationController
 
   # PATCH/PUT /vehicles/1 or /vehicles/1.json
   def update
+    current_user
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.update(vehicle_params)
