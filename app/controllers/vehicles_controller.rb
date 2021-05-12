@@ -18,12 +18,13 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1/edit
   def edit
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   # POST /vehicles or /vehicles.json
   def create
     @vehicle = Vehicle.new(vehicle_params)
-
+    @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.save
         format.html { redirect_to @vehicle, notice: "Vehicle was successfully created." }
@@ -37,6 +38,7 @@ class VehiclesController < ApplicationController
 
   # PATCH/PUT /vehicles/1 or /vehicles/1.json
   def update
+    @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.update(vehicle_params)
         format.html { redirect_to @vehicle, notice: "Vehicle was successfully updated." }

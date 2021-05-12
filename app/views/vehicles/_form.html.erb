@@ -23,7 +23,7 @@
 
   
 <div class = "field">
-<%= select_tag(:category_id, options_for_select([["choice1", 1], ["choice2", 2]]), { :prompt => "Select one!" }) %>
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
 </div>
   <div class="actions">
     <%= form.submit %>
