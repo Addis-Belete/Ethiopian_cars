@@ -8,6 +8,10 @@
       <th>Name</th>
       <th>Price</th>
       <th>Category</th>
+<th>Fuel Type</th>
+<th>Model</th>
+<th>Make</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +21,14 @@
       <tr>
         <td><%= vehicle.name %></td>
         <td><%= vehicle.price %></td>
-        <td><%= vehicle.category_id %></td>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= vehicle.category.name %></td>
+<td><%= vehicle.fuel_type %></td>
+<td><%= vehicle.model %></td>
+<td><%= vehicle.make %></td>
+
+        <td><%= link_to "Show", vehicle %></td>
+        <td><%= link_to "Edit", edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to "Destroy", vehicle, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Vehicle', new_vehicle_path %>
+<%= link_to "New Vehicle", new_vehicle_path %>

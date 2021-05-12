@@ -20,11 +20,26 @@
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
-
-  
+<div class="field">
+    <%= form.label :fuel_type %>
+    <%= form.text_field :fuel_type %>
+  </div>
+  <div class="field">
+    <%= form.label :make %>
+    <%= form.text_field :make %>
+  </div>
+<div class="field">
+    <%= form.label :model %>
+    <%= form.date_select :model, start_year: 1990, end_year: Time.now.year, discard_month: true %>
+  </div>
 <div class = "field">
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
 </div>
+<div class="field">
+    <%= form.label :vehicle_condition %>
+    <%= form.text_area :vehicle_condition %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

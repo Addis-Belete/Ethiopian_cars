@@ -13,7 +13,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/new
   def new
-    @vehicle = Vehicle.new
+    @vehicle = current_user.vehicles.build
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
@@ -39,7 +39,6 @@ class VehiclesController < ApplicationController
 
   # PATCH/PUT /vehicles/1 or /vehicles/1.json
   def update
-    current_user
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.update(vehicle_params)
@@ -70,6 +69,6 @@ class VehiclesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def vehicle_params
-    params.require(:vehicle).permit(:name, :price, :category_id)
+    params.require(:vehicle).permit(:name, :price, :category_id, :make, :model, :fuel_type, :vehicle_conditions)
   end
 end
