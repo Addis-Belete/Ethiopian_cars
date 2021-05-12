@@ -11,7 +11,7 @@
 <th>Fuel Type</th>
 <th>Model</th>
 <th>Make</th>
-
+<th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,6 +25,7 @@
 <td><%= vehicle.fuel_type %></td>
 <td><%= vehicle.model %></td>
 <td><%= vehicle.make %></td>
+<td><%= image_tag vehicle.avatar.url(:medium) %></td>
 
         <td><%= link_to "Show", vehicle %></td>
         <td><%= link_to "Edit", edit_vehicle_path(vehicle) %></td>
