@@ -69,7 +69,7 @@ class VehiclesController < ApplicationController
   def unvote
     @vehicle = Vehicle.all.find(params[:id])
     Vote.destroy(current_user.id)
-    redirect_to vehicle_path(@vehicle)
+    redirect_to vehicles_path(@vehicle)
   end
 
   private
