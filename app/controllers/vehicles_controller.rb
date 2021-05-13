@@ -60,6 +60,18 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def vote
+    @vehicle = Vehicle.all.find(params[:id])
+    Vote.create(user_id: current_user.id, vehicle_id: @vehicle.id)
+    redirect_to vehicle_path(@vehicle)
+  end
+
+  def unvote
+    @vehicle = Vehicle.all.find(params[:id])
+    Vote.destroy(current_user.id)
+    redirect_to vehicle_path(@vehicle)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

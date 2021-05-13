@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :vehicles
-  has_many :votes
+  has_many :votes, dependent: :destroy
+
+  def votes?(vehicle)
+    vehicle.votes.where(user_id: id).any?
+  end
 end
