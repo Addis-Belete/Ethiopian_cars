@@ -41,3 +41,7 @@
 <br>
 
 <%= link_to "New Vehicle", new_vehicle_path %>
+
+<% @categories.each do |c| %>
+<li><%= c.name %></li>
+<% end %>
