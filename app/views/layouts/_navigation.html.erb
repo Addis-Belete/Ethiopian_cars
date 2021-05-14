@@ -13,8 +13,17 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-<li><%= link_to "Home", root_path %><li>
-    
-        
+      <ul class="nav navbar-nav bg-warning mr-5 float-left home">
+<li class="text-danger"><%= link_to "Home", root_path %></li>
+<li><%= link_to "Cars", root_path(@cars) %>
+</li>
+<li><%= link_to "SUVs", root_path(@suvs) %></li>
+<li><%= link_to "Buses", root_path %></li>
+<li><%= link_to "Trucks", root_path %>  </li>
+<li><%= link_to "Equipment", root_path %> </li>  
+<li><%= link_to "Login", user_session_path, class: "float-right " %></li>
+<li class = "mr-5"><%= link_to "Register", new_user_registration_path %></li>
+</ul>  
+ 
+</div>
 </nav>

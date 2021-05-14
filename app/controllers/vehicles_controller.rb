@@ -6,6 +6,7 @@ class VehiclesController < ApplicationController
   def index
     @vehicles = Vehicle.all
     @categories = Category.all
+    @cars = Vehicle.all.where { @categories.name == "CARS" }
   end
 
   # GET /vehicles/1 or /vehicles/1.json
