@@ -8,6 +8,9 @@ class Vehicle < ApplicationRecord
   validates_associated :votes
   validates :vehicle_conditions, length: { minimum: 10 }
   validates :user, :category, presence: true
+  validates :avatar, attachment_presence: true
+  validates_with AttachmentPresenceValidator, attributes: :avatar
+  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
 
   def voted?(user)
     !!self.votes.find { |like| like.user_id == user.id }
