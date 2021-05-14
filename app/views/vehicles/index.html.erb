@@ -42,6 +42,11 @@
 
 <%= link_to "New Vehicle", new_vehicle_path %>
 
-<% @categories.each do |c| %>
-<li><%= c.name %></li>
+<% @popular.each do |vote| %>
+<%= vote.vehicle.name %>
+<%= image_tag vote.vehicle.avatar.url %>
+<% end %>
+
+<% @cars.each do |car| %>
+<%= car.vehicles.model %>
 <% end %>

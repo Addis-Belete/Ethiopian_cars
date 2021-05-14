@@ -5,8 +5,8 @@ class VehiclesController < ApplicationController
   # GET /vehicles or /vehicles.json
   def index
     @vehicles = Vehicle.all
-    @categories = Category.all
-    @cars = Vehicle.all.where { @categories.name == "CARS" }
+    @popular = Vote.popular
+    @cars = Category.where(name: "CARS").order(created_at: :desc).limit(1)
   end
 
   # GET /vehicles/1 or /vehicles/1.json
