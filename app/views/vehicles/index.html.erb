@@ -12,7 +12,31 @@
 
 
 <br>
+<div class = "category">
+<div class =" class " >
 <% @cars.each do |car| %>
 <%= car.name %>
 <%= image_tag car.avatar(:medium) %>
 <% end %>
+</div>
+<div>
+<% @suvs.each do |suv| %>
+<%= suv.category.name %>
+<%= suv.name %>
+<%= image_tag suv.avatar(:medium) %>
+<% end %>
+</div>
+<div class = "buses">
+<% @bus.each do |bus| %>
+<%= bus.category.name %>
+<%= bus.name %>
+<%= image_tag bus.avatar(:medium) %>
+<% end %>
+</div>
+<div class = "trucks">
+<% @trucks.each do |truck| %>
+<%= truck.category.name %>
+<%= truck.name %>
+<%= image_tag truck.avatar(:medium) %>
+<% end %>
+</div>
