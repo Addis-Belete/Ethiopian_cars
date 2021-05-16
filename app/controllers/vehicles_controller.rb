@@ -6,7 +6,12 @@ class VehiclesController < ApplicationController
   def index
     @vehicles = Vehicle.all
     @popular = Vote.popular
-    @cars = Category.where(name: "CARS").order(created_at: :desc).limit(1)
+    @cars = Vehicle.where(category_id: 3).order(created_at: :desc).limit(1)
+    @suvs = Vehicle.where(category_id: 4).order(created_at: :desc).limit(1)
+    @bus = Vehicle.where(category_id: 5).order(created_at: :desc).limit(1)
+    @trucks = Vehicle.where(category_id: 6).order(created_at: :desc).limit(1)
+    @equipment = Vehicle.where(category_id: 7).order(created_at: :desc).limit(1)
+    @parts = Vehicle.where(category_id: 8).order(created_at: :desc).limit(1)
   end
 
   # GET /vehicles/1 or /vehicles/1.json

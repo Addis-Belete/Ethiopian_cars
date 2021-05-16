@@ -14,33 +14,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
+<h2>New Vehicle</h2>
+<div>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
 <div class="field">
-    <%= form.label :fuel_type %>
     <%= form.text_field :fuel_type %>
   </div>
   <div class="field">
-    <%= form.label :make %>
     <%= form.text_field :make %>
   </div>
 <div class="field">
-    <%= form.label :model %>
     <%= form.date_select :model, start_year: 1990, end_year: Time.now.year, discard_month: true %>
   </div>
 <div class = "field">
-<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
 </div>
 <div class="field">
-    <%= form.label :vehicle_conditions %>
     <%= form.text_area :vehicle_conditions %>
   </div>
 <div class = "field">

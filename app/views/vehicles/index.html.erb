@@ -11,7 +11,8 @@
 <%= link_to "New Vehicle", new_vehicle_path %>
 
 
-
+<br>
 <% @cars.each do |car| %>
-<%= car.vehicles.model %>
+<%= car.name %>
+<%= image_tag car.avatar(:medium) %>
 <% end %>
