@@ -1,51 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Vehicles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Category</th>
-<th>Fuel Type</th>
-<th>Model</th>
-<th>Make</th>
-<th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vehicles.each do |vehicle| %>
-      <tr>
-        <td><%= vehicle.name %></td>
-        <td><%= vehicle.price %></td>
-        <td><%= vehicle.category.name %></td>
-<td><%= vehicle.fuel_type %></td>
-<td><%= vehicle.model %></td>
-<td><%= vehicle.make %></td>
-<td><%= image_tag vehicle.avatar.url(:medium) %></td>
-
-
-        <td><%= link_to "Show", vehicle %></td>
-        <td><%= link_to "Edit", edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to "Destroy", vehicle, method: :delete, data: { confirm: "Are you sure?" } %></td>
-
-      
-   
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div class = "popular">
+<% @popular.each do |vote| %>
+<div class = "popular_image">
+<%= image_tag vote.vehicle.avatar(:medium) %>
+</div>
+<div class = "popular_title">
+<%= vote.vehicle.name %>
+</div>
+<% end %>
+<div>
 <%= link_to "New Vehicle", new_vehicle_path %>
 
-<% @popular.each do |vote| %>
-<%= vote.vehicle.name %>
-<%= image_tag vote.vehicle.avatar.url %>
-<% end %>
+
 
 <% @cars.each do |car| %>
 <%= car.vehicles.model %>

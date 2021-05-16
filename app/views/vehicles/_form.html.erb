@@ -1,4 +1,8 @@
-<%= form_for @vehicle, html: { multipart: true } do |form| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <%= bootstrap_form_for @vehicle, html: { multipart: true } do |form| %>
   <% if vehicle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
@@ -46,3 +50,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+    </div>
+  </div> 
+</div>
