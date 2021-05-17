@@ -19,6 +19,7 @@ margin-left: 10%;
 color: white;
 font-size: 20px;
 }
+// mixin for categories
 @mixin car_category{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -29,12 +30,38 @@ background-color: #FEFEFE;
 border: 1px solid whitesmoke;
 padding-left: 20px;
 }
-@mixin category_name{
-width: 360px;
-background-color: #FEFEFE;
-border: 1px solid whitesmoke;
-padding-left: 20px;
+@mixin category_title{
+color:#F9A318;
+font-size: 25px;
+font-weight: bold;
+border-bottom-style: solid;
+border-bottom-width: 3.1px;
+width: fit-content;
 }
+@mixin car_title{
+
+font-weight: bolder;
+font-size: 17px;
+color:black;
+padding-top:10px;
+
+}
+
+@mixin vehicle_condition{
+font-size: 14px;
+padding-top: 20px;
+
+}
+@mixin details_one{
+padding-top: 20px;
+font-size:16px;
+
+}
+@mixin details_two{
+color:#F9A318;
+}
+
+
 .popular{
 .popular_image{
 margin-top: -3%;
@@ -51,8 +78,7 @@ bottom:100px;
 }
 
 .category{
-display: flex;
-margin-top: -62px;
+@include car_category;
 .car{
 .c_car{
 @include category_name;
@@ -101,39 +127,25 @@ height: 100vh
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 .detail{
-width: 360px;
-background-color: #FEFEFE;
-border: 1px solid whitesmoke;
-padding-left: 20px;
-.category_name{
-color:#F9A318;
-font-size: 20px;
-font-weight: bold;
-border-bottom-style: solid;
-border-bottom-width: 3.1px;
-width: fit-content;
+@include detail;
 
+.category_name{
+@include category_title;
 }
 .car_name{
-font-weight: bolder;
-font-size: 17px;
-color:black;
-padding-top:10px;
+@include car_title;
 
 }
 .vehicle_condition{
-font-size: 14px;
-padding-top: 20px;
+@include vehicle_condition;
 
 }
 
 .details{
-padding-top: 20px;
-font-size:16px;
+@include details_one;
 .detail{
-color:#F9A318;
+@include details_two;
 }
-
 }
 }
 

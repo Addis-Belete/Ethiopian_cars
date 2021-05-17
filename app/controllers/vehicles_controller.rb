@@ -18,6 +18,10 @@ class VehiclesController < ApplicationController
     @cars = Vehicle.where(category_id: 3).order(created_at: :desc)
   end
 
+  def suv
+    @suvs = Vehicle.where(category_id: 4).order(created_at: :desc).limit(4)
+  end
+
   # GET /vehicles/1 or /vehicles/1.json
   def show
   end

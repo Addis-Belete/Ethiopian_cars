@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :vehicles
   get "/cars", to: "vehicles#car"
+  get "/suvs", to: "vehicles#suv"
 
   root "vehicles#index"
   put "/vehicle/:id/vote", to: "vehicles#vote", as: "vote"
