@@ -1,24 +1,49 @@
 footer{
+border:solid;
 background-color: #4D433F !important;
 align-items: center;
 display: flex;
-h2{
+margin-top: -63px;
+position: relative;
+
+padding-bottom: 7px;
+
+.navbar-brand{
 margin-left: 3%;
 padding-top: -10px;
 color: white;
-}
-.terms{
-margin-left:20%;
-color: #B8551F;
+font-size: 25px;
+font-weight: bold;
+width: 300px;
 
 }
+
+.terms{
+margin-left:10%;
+display: flex;
+padding-top: 20px;
+.privacy{
+color: #B8551F;
+}
+p{
+color: white;
+padding-left: 5px;
+}
+}
+
 .social{
 display:flex;
 margin-left: 22%;
 box-sizing: border-box;
 color:aliceblue;
+padding-top: 17px;
+align-items: center;
+
 .fb{
 color: #FE6000;
+margin-left:5px;
+
+
 
 }
 }

@@ -1,11 +1,13 @@
 <footer class = " bg-warning">
 
-<h2>Ethio-car</h2>
+<div class="navbar-header">
+      <%= link_to "Ethio-Cars", root_path, class: "navbar-brand" %>
+    </div>
 
 <div class = "terms">
-<%= link_to "Privacy $ policy", vehicles_path %>
-<%= link_to "Terms $ conditions", vehicles_path %>
-<%= "Copyright 2014. All right reserved" %>
+<%= link_to "Privacy $ policy", vehicles_path, class: "privacy" %>
+<%= link_to "Terms $ conditions", vehicles_path, class: "privacy" %>
+<p> Copyright 2014. All right reserved </p>
 </div>
 <div class = "social">
 <p>Connect with us:</p>

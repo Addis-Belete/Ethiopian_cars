@@ -14,6 +14,10 @@ class VehiclesController < ApplicationController
     @parts = Vehicle.where(category_id: 8).order(created_at: :desc).limit(1)
   end
 
+  def car
+    @cars = Vehicle.where(category_id: 3).order(created_at: :desc)
+  end
+
   # GET /vehicles/1 or /vehicles/1.json
   def show
   end

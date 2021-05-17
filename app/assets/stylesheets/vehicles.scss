@@ -76,3 +76,26 @@ margin-top: -62px;
 }
 }
 }
+
+section{
+height: 100vh
+}
+
+// car category page
+.car_category{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+.detail{
+width: 360px;
+background-color: #FEFEFE;
+border: 1px solid red;
+.category_name{
+color:#F9A318;
+font-size: 20px;
+font-weight: bold;
+text-decoration: underline;
+
+}
+}
+
+}

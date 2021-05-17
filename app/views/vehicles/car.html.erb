@@ -1,0 +1,15 @@
+<div class = "car_category">
+<% @cars.each do |car| %>
+<div>
+<%= image_tag car.avatar.url, size: "360x300" %>
+</div>
+<div class = "detail">
+<div class = "category_name" >
+<%= car.category.name %>
+</div>
+<%= car.name %><br>
+<%= car.vehicle_conditions %><br>
+<%= link_to "Details", cars_path %>
+</div>
+<% end %>
+<div>
