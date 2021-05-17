@@ -19,7 +19,22 @@ margin-left: 10%;
 color: white;
 font-size: 20px;
 }
-
+@mixin car_category{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@mixin detail{
+width: 360px;
+background-color: #FEFEFE;
+border: 1px solid whitesmoke;
+padding-left: 20px;
+}
+@mixin category_name{
+width: 360px;
+background-color: #FEFEFE;
+border: 1px solid whitesmoke;
+padding-left: 20px;
+}
 .popular{
 .popular_image{
 margin-top: -3%;
@@ -88,12 +103,36 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 .detail{
 width: 360px;
 background-color: #FEFEFE;
-border: 1px solid red;
+border: 1px solid whitesmoke;
+padding-left: 20px;
 .category_name{
 color:#F9A318;
 font-size: 20px;
 font-weight: bold;
-text-decoration: underline;
+border-bottom-style: solid;
+border-bottom-width: 3.1px;
+width: fit-content;
+
+}
+.car_name{
+font-weight: bolder;
+font-size: 17px;
+color:black;
+padding-top:10px;
+
+}
+.vehicle_condition{
+font-size: 14px;
+padding-top: 20px;
+
+}
+
+.details{
+padding-top: 20px;
+font-size:16px;
+.detail{
+color:#F9A318;
+}
 
 }
 }
