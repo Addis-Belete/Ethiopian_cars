@@ -14,8 +14,8 @@
       </ul>
     </div>
   <% end %>
-<h2>New Vehicle</h2>
-<div>
+<h1>New Vehicle</h1>
+  <div class="field">
     <%= form.text_field :name %>
   </div>
 
@@ -32,7 +32,7 @@
     <%= form.date_select :model, start_year: 1990, end_year: Time.now.year, discard_month: true %>
   </div>
 <div class = "field">
-<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
+<%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: "Select category") %>
 </div>
 <div class="field">
     <%= form.text_area :vehicle_conditions %>

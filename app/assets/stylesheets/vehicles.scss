@@ -1,14 +1,78 @@
 // Place all the styles related to the vehicles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.popular{
-.popular_image{
-
-margin-top: -5%;
-margin-right: auto;
-margin-left: auto;
-box-sizing: border-box;
-max-width: 100%;
+@mixin category_name{
+position: relative;
+bottom:280px;
+margin-left: 10%;
+color: white;
+font-size: 25px;
+text-decoration: underline;
+text-decoration-color: #F2F11A;
+font-weight: bold;
 }
 
+@mixin car_name{
+position: relative;
+bottom: 70px;
+margin-left: 10%;
+color: white;
+font-size: 20px;
+}
+
+.popular{
+.popular_image{
+margin-top: -3%;
+
+}
+.popular_title{
+color:red;
+font-size: 30px;
+box-sizing: border-box;
+position: relative;
+bottom:100px;
+}
+
+}
+
+.category{
+display: flex;
+margin-top: -62px;
+.car{
+.c_car{
+@include category_name;
+}
+
+.car_name{
+@include car_name
+}
+}
+.suvs{
+
+.c_suvs{
+@include category_name;
+}
+
+.suvs_name{
+@include car_name;
+}
+}
+.buses{
+.c_bus{
+@include category_name;
+}
+.bus_name{
+@include car_name;
+
+}
+}
+.trucks{
+.c_trucks{
+
+@include category_name;
+}
+.truck_name{
+@include car_name;
+}
+}
 }

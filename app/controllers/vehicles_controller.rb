@@ -21,7 +21,6 @@ class VehiclesController < ApplicationController
   # GET /vehicles/new
   def new
     @vehicle = current_user.vehicles.build
-    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   # GET /vehicles/1/edit
