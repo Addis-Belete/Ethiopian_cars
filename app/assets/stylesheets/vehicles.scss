@@ -1,0 +1,169 @@
+// Place all the styles related to the vehicles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@mixin category_name {
+  position: relative;
+  bottom: 280px;
+  margin-left: 10%;
+  color: white;
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-color: #f2f11a;
+  font-weight: bold;
+}
+
+@mixin car_name {
+  position: relative;
+  bottom: 70px;
+  margin-left: 10%;
+  color: white;
+  font-size: 20px;
+}
+// mixin for categories
+@mixin car_category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: -72px;
+}
+
+@mixin detail {
+  width: 360px;
+  background-color: #fefefe;
+  border: 1px solid whitesmoke;
+  padding-left: 20px;
+}
+
+@mixin category_title {
+  color: #f9a318;
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom-style: solid;
+  border-bottom-width: 3.1px;
+  width: fit-content;
+}
+
+@mixin car_title {
+  font-weight: bolder;
+  font-size: 17px;
+  color: black;
+  padding-top: 10px;
+}
+
+@mixin vehicle_condition {
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+@mixin details_one {
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+@mixin details_two {
+  color: #f9a318;
+}
+
+.popular {
+  .popular_image {
+    margin-top: -3%;
+  }
+
+  .popular_title {
+    color: red;
+    font-size: 30px;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 100px;
+
+    .vehicle_name {
+      color: #f9a318 !important;
+      font-size: 20px;
+      margin-left: 15px;
+    }
+
+    .veh_condition {
+      color: white;
+      font-size: 17px;
+      margin-left: 15px;
+    }
+  }
+}
+
+.category {
+  @include car_category;
+
+  .car {
+    .c_car {
+      @include category_name;
+    }
+
+    .car_name {
+      @include car_name;
+    }
+  }
+
+  .suvs {
+    .c_suvs {
+      @include category_name;
+    }
+
+    .suvs_name {
+      @include car_name;
+    }
+  }
+
+  .buses {
+    .c_bus {
+      @include category_name;
+    }
+
+    .bus_name {
+      @include car_name;
+    }
+  }
+
+  .trucks {
+    .c_trucks {
+      @include category_name;
+    }
+
+    .truck_name {
+      @include car_name;
+    }
+  }
+}
+
+// car category page
+.car_category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  .detail {
+    @include detail;
+
+    .category_name {
+      @include category_title;
+    }
+
+    .car_name {
+      @include car_title;
+    }
+
+    .vehicle_condition {
+      @include vehicle_condition;
+    }
+
+    .details {
+      @include details_one;
+
+      .detail {
+        @include details_two;
+      }
+    }
+  }
+}
+// links
+.link {
+  margin-left: 31%;
+  margin-right: auto;
+}

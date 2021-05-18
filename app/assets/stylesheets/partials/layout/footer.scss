@@ -1,0 +1,43 @@
+footer {
+  background-color: #4d433f !important;
+  align-items: center;
+  display: flex;
+  padding-bottom: 7px;
+  padding-top: 26px;
+
+  .navbar-brand {
+    margin-left: 3%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    width: 300px;
+  }
+
+  .terms {
+    margin-left: 10%;
+    display: flex;
+    font-size: 14px;
+
+    .privacy {
+      color: #b8551f;
+    }
+
+    p {
+      color: white;
+      padding-left: 5px;
+    }
+  }
+
+  .social {
+    display: flex;
+    margin-left: 22%;
+    box-sizing: border-box;
+    color: aliceblue;
+    align-items: center;
+
+    .fb {
+      color: #fe6000;
+      margin-left: 5px;
+    }
+  }
+}

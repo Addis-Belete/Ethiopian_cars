@@ -6,11 +6,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
   <body>
+<% if flash[:notice] %>
+<div class  = "bg-primary">
+<p class="notice"><%= notice %></p>
+<div>
+<% end %>
+<% if flash[:alert] %>
+<div class = "bg-danger">
+ <p class="alert"><%= alert %></p> 
+</div>
+<% end %>
+<%= render "layouts/navigation" %>  
     <%= yield %>
+<%= render "layouts/footer" %>
+      
+<br>
+
+
+
   </body>
 </html>
