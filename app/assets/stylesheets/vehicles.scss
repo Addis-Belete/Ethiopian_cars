@@ -23,7 +23,7 @@ font-size: 20px;
 @mixin car_category{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
-margin-top: -62px;
+margin-top: -72px;
 }
 @mixin detail{
 width: 360px;
@@ -75,6 +75,16 @@ font-size: 30px;
 box-sizing: border-box;
 position: relative;
 bottom:100px;
+.vehicle_name{
+color:#F9A318 !important;
+font-size: 20px;
+margin-left: 15px;
+}
+.veh_condition{
+color:white;
+font-size: 17px;
+margin-left: 15px;
+}
 }
 
 }
@@ -148,4 +158,9 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 }
 
+}
+// links
+.link{
+margin-left: 31%;
+margin-right: auto;
 }

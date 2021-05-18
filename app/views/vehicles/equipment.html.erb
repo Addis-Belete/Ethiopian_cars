@@ -17,7 +17,7 @@
 <h5>Price: <%= car.price %></p>
 </div>
 <div class = "details">
-<%= link_to "Details", class: "detail" %>
+<%= link_to "Details", vehicle_path(car.id), class: "detail" %>
 </div>
 </div>
 <% end %>

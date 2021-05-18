@@ -5,8 +5,12 @@
 <%= image_tag vote.vehicle.avatar.url(:medium), size: "1440x500" %>
 </div>
 <div class = "popular_title">
-<%= vote.vehicle.name %> <br>
+<div class = "vehicle_name">
+<%= vote.vehicle.name %>
+</div>
+<div class = "veh_condition">
 <%= vote.vehicle.vehicle_conditions %>
+</div>
 </div>
 <% end %>
 <div>

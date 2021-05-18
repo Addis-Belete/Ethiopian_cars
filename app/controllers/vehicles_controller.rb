@@ -1,7 +1,8 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-
+  before_action :find_vehicle, only: [:vote]
+  before_action :find_vote, only: [:unvote]
   # GET /vehicles or /vehicles.json
   def index
     @vehicles = Vehicle.all
@@ -36,6 +37,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1 or /vehicles/1.json
   def show
+    @vehicle = Vehicle.find(params[:id])
   end
 
   # GET /vehicles/new
@@ -87,15 +89,13 @@ class VehiclesController < ApplicationController
   end
 
   def vote
-    @vehicle = Vehicle.all.find(params[:id])
-    Vote.create(user_id: current_user.id, vehicle_id: @vehicle.id)
+    @vehicle.votes.create(user_id: current_user.id)
     redirect_to vehicle_path(@vehicle)
   end
 
   def unvote
-    @vehicle = Vehicle.all.find(params[:id])
-    Vote.destroy(current_user.id)
-    redirect_to vehicles_path(@vehicle)
+    @vote.destroy
+    redirect_to vehicles_path
   end
 
   private
@@ -108,5 +108,14 @@ class VehiclesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def vehicle_params
     params.require(:vehicle).permit(:name, :price, :category_id, :make, :model, :fuel_type, :vehicle_conditions, :avatar)
+  end
+
+  def find_vehicle
+    @vehicle = Vehicle.find(params[:id])
+  end
+
+  def find_vote
+    @vehicle = Vehicle.find(params[:id])
+    @vote = @vehicle.votes.find(params[:id])
   end
 end
