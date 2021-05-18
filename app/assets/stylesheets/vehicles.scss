@@ -23,6 +23,7 @@ font-size: 20px;
 @mixin car_category{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
+margin-top: -62px;
 }
 @mixin detail{
 width: 360px;
@@ -65,6 +66,7 @@ color:#F9A318;
 .popular{
 .popular_image{
 margin-top: -3%;
+
 
 }
 .popular_title{
@@ -118,9 +120,6 @@ bottom:100px;
 }
 }
 
-section{
-height: 100vh
-}
 
 // car category page
 .car_category{
