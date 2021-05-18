@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <%= bootstrap_form_for @vehicle, html: { multipart: true } do |form| %>
+  <% if vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+        <% vehicle.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :price %>
+  </div>
+<div class="field">
+    <%= form.text_field :fuel_type %>
+  </div>
+  <div class="field">
+    <%= form.text_field :make %>
+  </div>
+<div class="field">
+    <%= form.date_select :model, start_year: 1990, end_year: Time.now.year, discard_month: true %>
+  </div>
+<div class = "field">
+<%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: "Select category") %>
+</div>
+<div class="field">
+    <%= form.text_area :vehicle_conditions %>
+  </div>
+<div class = "field">
+<%= form.file_field :avatar %>  
+</div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+    </div>
+  </div> 
+</div>

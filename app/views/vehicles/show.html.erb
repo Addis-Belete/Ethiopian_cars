@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vehicle.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @vehicle.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @vehicle.category_id %>
+</p>
+<% if user_signed_in? %>
+<% if @vehicle.voted?(current_user) %>
+<%= button_to "Unlike", unvote_path(@vehicle), method: "put" %>
+<% else %>
+<%= button_to "Like", vote_path(@vehicle), method: "put" %>
+<% end %>
+<% end %>
+<p><%= @vehicle.votes.count %> <%= (@vehicle.votes.count) <= 1 ? "Vote" : "Votes" %></p>
+<%= link_to "Edit", edit_vehicle_path(@vehicle) %> |
+<%= link_to "Back", vehicles_path %>
