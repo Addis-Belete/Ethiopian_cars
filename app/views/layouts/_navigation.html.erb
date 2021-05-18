@@ -16,8 +16,9 @@
 <li><%= link_to "Equipment", equipments_path %> </li>  
   <% if current_user %>
  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-     <li>   <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 <li><%= link_to "New Vehicle", new_vehicle_path %></li>
+     <li>   <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+
       <% else %>
        <li> <%= link_to "Sign in", user_session_path %></li>
       <% end %>
