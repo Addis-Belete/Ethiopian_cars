@@ -1,47 +1,47 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class VehiclesTest < ApplicationSystemTestCase
   setup do
     @vehicle = vehicles(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit vehicles_url
-    assert_selector "h1", text: "Vehicles"
+    assert_selector 'h1', text: 'Vehicles'
   end
 
-  test "creating a Vehicle" do
+  test 'creating a Vehicle' do
     visit vehicles_url
-    click_on "New Vehicle"
+    click_on 'New Vehicle'
 
-    fill_in "Category", with: @vehicle.category_id
-    fill_in "Name", with: @vehicle.name
-    fill_in "Price", with: @vehicle.price
-    click_on "Create Vehicle"
+    fill_in 'Category', with: @vehicle.category_id
+    fill_in 'Name', with: @vehicle.name
+    fill_in 'Price', with: @vehicle.price
+    click_on 'Create Vehicle'
 
-    assert_text "Vehicle was successfully created"
-    click_on "Back"
+    assert_text 'Vehicle was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Vehicle" do
+  test 'updating a Vehicle' do
     visit vehicles_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    fill_in "Category", with: @vehicle.category_id
-    fill_in "Name", with: @vehicle.name
-    fill_in "Price", with: @vehicle.price
-    click_on "Update Vehicle"
+    fill_in 'Category', with: @vehicle.category_id
+    fill_in 'Name', with: @vehicle.name
+    fill_in 'Price', with: @vehicle.price
+    click_on 'Update Vehicle'
 
-    assert_text "Vehicle was successfully updated"
-    click_on "Back"
+    assert_text 'Vehicle was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Vehicle" do
+  test 'destroying a Vehicle' do
     visit vehicles_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Vehicle was successfully destroyed"
+    assert_text 'Vehicle was successfully destroyed'
   end
 end

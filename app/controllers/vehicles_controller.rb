@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: %i[ show edit update destroy ]
+  before_action :set_vehicle, only: %i[show edit update destroy]
   before_action :authenticate_user!
   before_action :find_vehicle, only: [:vote]
   before_action :find_vote, only: [:unvote]
@@ -56,7 +56,7 @@ class VehiclesController < ApplicationController
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.save
-        format.html { redirect_to @vehicle, notice: "Vehicle was successfully created." }
+        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully created.' }
         format.json { render :show, status: :created, location: @vehicle }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -70,7 +70,7 @@ class VehiclesController < ApplicationController
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.update(vehicle_params)
-        format.html { redirect_to @vehicle, notice: "Vehicle was successfully updated." }
+        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully updated.' }
         format.json { render :show, status: :ok, location: @vehicle }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -83,7 +83,7 @@ class VehiclesController < ApplicationController
   def destroy
     @vehicle.destroy
     respond_to do |format|
-      format.html { redirect_to vehicles_url, notice: "Vehicle was successfully destroyed." }
+      format.html { redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -107,7 +107,8 @@ class VehiclesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def vehicle_params
-    params.require(:vehicle).permit(:name, :price, :category_id, :make, :model, :fuel_type, :vehicle_conditions, :avatar)
+    params.require(:vehicle).permit(:name, :price, :category_id, :make, :model, :fuel_type, :vehicle_conditions,
+                                    :avatar)
   end
 
   def find_vehicle
