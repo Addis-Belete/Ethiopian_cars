@@ -11,9 +11,9 @@
 <li><%= link_to "Home", root_path, class: "home" %></li>
 <li><%= link_to "Cars", cars_path %></li>
 <li><%= link_to "SUVs", suvs_path %></li>
-<li><%= link_to "Buses", root_path %></li>
-<li><%= link_to "Trucks", root_path %>  </li>
-<li><%= link_to "Equipment", root_path %> </li>  
+<li><%= link_to "Buses", buses_path %></li>
+<li><%= link_to "Trucks", trucks_path %>  </li>
+<li><%= link_to "Equipment", equipments_path %> </li>  
   <% if current_user %>
  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
      <li>   <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>

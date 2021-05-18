@@ -1,0 +1,24 @@
+<div class = "car_category">
+<% @equipment.each do |car| %>
+<div>
+<%= image_tag car.avatar.url, size: "360x300" %>
+</div>
+<div class = "detail">
+<div class = "category_name" >
+<%= car.category.name %>
+</div>
+<div class = "car_name">
+<%= car.name %>
+</div>
+<div class = "vehicle_condition">
+<%= car.vehicle_conditions %>
+</div>
+<div class = "price">
+<h5>Price: <%= car.price %></p>
+</div>
+<div class = "details">
+<%= link_to "Details", class: "detail" %>
+</div>
+</div>
+<% end %>
+<div>

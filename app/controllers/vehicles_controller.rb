@@ -8,8 +8,8 @@ class VehiclesController < ApplicationController
     @popular = Vote.popular
     @cars = Vehicle.where(category_id: 3).order(created_at: :desc).limit(1)
     @suvs = Vehicle.where(category_id: 4).order(created_at: :desc).limit(1)
-    @bus = Vehicle.where(category_id: 5).order(created_at: :desc).limit(1)
-    @trucks = Vehicle.where(category_id: 6).order(created_at: :desc).limit(1)
+    @bus = Vehicle.where(category_id: 6).order(created_at: :desc).limit(1)
+    @trucks = Vehicle.where(category_id: 5).order(created_at: :desc).limit(1)
     @equipment = Vehicle.where(category_id: 7).order(created_at: :desc).limit(1)
     @parts = Vehicle.where(category_id: 8).order(created_at: :desc).limit(1)
   end
@@ -20,6 +20,18 @@ class VehiclesController < ApplicationController
 
   def suv
     @suvs = Vehicle.where(category_id: 4).order(created_at: :desc).limit(4)
+  end
+
+  def bus
+    @buses = Vehicle.where(category_id: 6).order(created_at: :desc).limit(4)
+  end
+
+  def truck
+    @trucks = Vehicle.where(category_id: 5).order(created_at: :desc).limit(4)
+  end
+
+  def equipment
+    @equipment = Vehicle.where(category_id: 7).order(created_at: :desc).limit(4)
   end
 
   # GET /vehicles/1 or /vehicles/1.json
