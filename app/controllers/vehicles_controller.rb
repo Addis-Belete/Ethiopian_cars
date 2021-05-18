@@ -1,8 +1,7 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: %i[show edit update destroy]
+  before_action :set_vehicle, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  before_action :find_vehicle, only: [:vote]
-  before_action :find_vote, only: [:unvote]
+
   # GET /vehicles or /vehicles.json
   def index
     @vehicles = Vehicle.all
@@ -56,7 +55,7 @@ class VehiclesController < ApplicationController
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.save
-        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully created.' }
+        format.html { redirect_to @vehicle, notice: "Vehicle was successfully created." }
         format.json { render :show, status: :created, location: @vehicle }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -70,7 +69,7 @@ class VehiclesController < ApplicationController
     @vehicle.category_id = params[:category_id]
     respond_to do |format|
       if @vehicle.update(vehicle_params)
-        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully updated.' }
+        format.html { redirect_to @vehicle, notice: "Vehicle was successfully updated." }
         format.json { render :show, status: :ok, location: @vehicle }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -83,19 +82,21 @@ class VehiclesController < ApplicationController
   def destroy
     @vehicle.destroy
     respond_to do |format|
-      format.html { redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.' }
+      format.html { redirect_to vehicles_url, notice: "Vehicle was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   def vote
-    @vehicle.votes.create(user_id: current_user.id)
+    @vehicle = Vehicle.all.find(params[:id])
+    Vote.create(user_id: current_user.id, vehicle_id: @vehicle.id)
     redirect_to vehicle_path(@vehicle)
   end
 
   def unvote
-    @vote.destroy
-    redirect_to vehicles_path
+    @vehicle = Vehicle.all.find(params[:id])
+    Vote.destroy(@vehicle.votes.ids)
+    redirect_to vehicles_path(@vehicle)
   end
 
   private
@@ -107,16 +108,6 @@ class VehiclesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def vehicle_params
-    params.require(:vehicle).permit(:name, :price, :category_id, :make, :model, :fuel_type, :vehicle_conditions,
-                                    :avatar)
-  end
-
-  def find_vehicle
-    @vehicle = Vehicle.find(params[:id])
-  end
-
-  def find_vote
-    @vehicle = Vehicle.find(params[:id])
-    @vote = @vehicle.votes.find(params[:id])
+    params.require(:vehicle).permit(:name, :price, :category_id, :make, :model, :fuel_type, :vehicle_conditions, :avatar)
   end
 end
