@@ -12,9 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2021_05_14_062345) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "priority"
+    t.integer "user_id"
+    t.string "fuel_type"
+    t.date "model"
+    t.string "make"
+    t.text "vehicle_condition"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,13 +45,13 @@ ActiveRecord::Schema.define(version: 2021_05_14_062345) do
     t.string "name"
     t.string "price"
     t.string "category_id"
+    t.integer "user_id"
+    t.string "make"
+    t.date "model"
+    t.string "fuel_type"
+    t.text "vehicle_conditions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.string "fuel_type"
-    t.date "model"
-    t.string "make"
-    t.text "vehicle_conditions"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
