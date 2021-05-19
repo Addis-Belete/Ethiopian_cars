@@ -14,8 +14,8 @@ Ethio-cars is built by taking lifestyle webpage as reference. I used the layout 
 
 [Ethio-cars](https://quiet-gorge-87738.herokuapp.com/)
 
-## Vedio
-[Vedio-link](https://www.loom.com/share/836eb2de147a45fe8002b19a97cb2de8)
+## Video
+[Video-link](https://www.loom.com/share/836eb2de147a45fe8002b19a97cb2de8)
 
 ## Getting Started
 
