@@ -27,7 +27,7 @@
 }
 
 @mixin detail {
-  width: 360px;
+  min-width: 100%;
   background-color: #fefefe;
   border: 1px solid whitesmoke;
   padding-left: 20px;
@@ -52,6 +52,7 @@
 @mixin vehicle_condition {
   font-size: 14px;
   padding-top: 20px;
+
 }
 
 @mixin details_one {
@@ -66,6 +67,12 @@
 .popular {
   .popular_image {
     margin-top: -3%;
+max-width: 100%;
+height: auto;
+img{
+min-width: 100%;
+height: auto;
+}
   }
 
   .popular_title {
@@ -93,8 +100,15 @@
   @include car_category;
 
   .car {
+.car_image{
+img{
+min-width: 100%;
+
+}
+}
     .c_car {
       @include category_name;
+
     }
 
     .car_name {
@@ -103,6 +117,12 @@
   }
 
   .suvs {
+.suvs_image{
+img{
+min-width: 100%;
+
+}
+}
     .c_suvs {
       @include category_name;
     }
@@ -113,6 +133,11 @@
   }
 
   .buses {
+.bus_image{
+img{
+min-width: 100%;
+}
+}
     .c_bus {
       @include category_name;
     }
@@ -123,6 +148,11 @@
   }
 
   .trucks {
+.truck_image{
+img{
+min-width: 100%;
+}
+}
     .c_trucks {
       @include category_name;
     }
@@ -137,7 +167,12 @@
 .car_category {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+div{
+img{
+min-width: 100%;
 
+}
+}
   .detail {
     @include detail;
 
@@ -147,10 +182,13 @@
 
     .car_name {
       @include car_title;
+
+
     }
 
     .vehicle_condition {
       @include vehicle_condition;
+
     }
 
     .details {

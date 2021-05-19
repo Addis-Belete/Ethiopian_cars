@@ -1,8 +1,8 @@
 <section>
 <div class = "popular">
 <% @popular.each do |vote| %>
-<div class = "popular_image">
-<%= image_tag vote.vehicle.avatar.url(:medium), size: "1440x500" %>
+<div class = "img-fluid popular_image ">
+<%= image_tag vote.vehicle.avatar.url(:large), class: "img-fluid" %>
 </div>
 <div class = "popular_title">
 <div class = "vehicle_name">
@@ -15,11 +15,11 @@
 <% end %>
 <div>
 <br>
-<div class = "category d-flex">
+<div class = "category">
 <div class =" car " >
 <% @cars.each do |car| %>
 <div class = "car_image">
-<%= image_tag car.avatar.url, size: "360x300" %>
+<%= image_tag car.avatar.url, size: "256x300" %>
 </div>
 <div class = "c_car">
 <%= car.category.name %>
@@ -32,7 +32,7 @@
 <div class = "suvs">
 <% @suvs.each do |suv| %>
 <div class = "suvs_image">
-<%= image_tag suv.avatar.url, size: "360x300" %>
+<%= image_tag suv.avatar.url, size: "256x300" %>
 </div>
 <div class = "c_suvs">
 <%= suv.category.name %>
@@ -45,7 +45,7 @@
 <div class = "buses">
 <% @bus.each do |bus| %>
 <div class = "bus_image">
-<%= image_tag bus.avatar.url, size: "360x300" %>
+<%= image_tag bus.avatar.url, size: "256x300" %>
 </div>
 <div class = "c_bus">
 <%= bus.category.name %>
@@ -58,7 +58,7 @@
 <div class = "trucks">
 <% @trucks.each do |truck| %>
 <div class = "truck_image">
-<%= image_tag truck.avatar.url, size: "360x300" %>
+<%= image_tag truck.avatar.url, size: "256x300" %>
 </div>
 <div class = "c_trucks">
 <%= truck.category.name %>
