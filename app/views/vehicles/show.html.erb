@@ -17,5 +17,10 @@
 <%= like(@vehicle) %>
 
 <p><%= @vehicle.votes.count %> <%= (@vehicle.votes.count) <= 1 ? "Vote" : "Votes" %></p>
+<% if current_user.id == @vehicle.user_id %>
 <%= link_to "Edit", edit_vehicle_path(@vehicle) %> |
 <%= link_to "Back", vehicles_path %>
+<% else %>
+<%= link_to "Back", vehicles_path %>
+<% end %>
+
