@@ -1,6 +1,6 @@
 <section>
 <div class = "popular">
-<% @popular.each do |vote| %>
+<% @popular.includes(:vehicle).each do |vote| %>
 <div class = "img-fluid popular_image ">
 <%= image_tag vote.vehicle.avatar.url(:large), alt: "most liked vehicle image" %>
 </div>
