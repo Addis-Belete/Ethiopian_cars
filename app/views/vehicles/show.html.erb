@@ -15,5 +15,8 @@
   <%= @vehicle.category_id %>
 </p>
 <%= like(@vehicle) %>
+
+<p><%= @vehicle.votes.count %> <%= (@vehicle.votes.count) <= 1 ? "Vote" : "Votes" %></p>
+
 <%= edit_back %>
 
