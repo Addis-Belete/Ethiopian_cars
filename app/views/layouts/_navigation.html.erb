@@ -4,26 +4,23 @@
     <div class="navbar-header">
       <%= link_to "Ethio-Cars", root_path, class: "navbar-brand" %>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav mr-5 float-left home">
-<li><%= link_to "Home", root_path, class: "home" %></li>
-<li><%= link_to "Cars", cars_path %></li>
-<li><%= link_to "SUVs", suvs_path %></li>
-<li><%= link_to "Buses", buses_path %></li>
-<li><%= link_to "Trucks", trucks_path %>  </li>
-<li><%= link_to "Equipment", equipments_path %> </li>  
-  <% if current_user %>
- <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-<li><%= link_to "New Vehicle", new_vehicle_path %></li>
-     <li>   <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-
-      <% else %>
-       <li> <%= link_to "Sign in", user_session_path %></li>
-      <% end %>
-
-</ul>  
- </div>
-</div>
+        <li><%= link_to "Home", root_path, class: "home" %></li>
+        <li><%= link_to "Cars", cars_path %></li>
+        <li><%= link_to "SUVs", suvs_path %></li>
+        <li><%= link_to "Buses", buses_path %></li>
+        <li><%= link_to "Trucks", trucks_path %>  </li>
+        <li><%= link_to "Equipment", equipments_path %> </li>
+        <% if current_user %>
+          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li><%= link_to "New Vehicle", new_vehicle_path %></li>
+          <li>   <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li> <%= link_to "Sign in", user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>

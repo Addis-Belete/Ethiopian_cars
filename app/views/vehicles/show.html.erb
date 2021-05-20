@@ -1,22 +1,16 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @vehicle.name %>
 </p>
-
 <p>
   <strong>Price:</strong>
   <%= @vehicle.price %>
 </p>
-
 <p>
   <strong>Category:</strong>
   <%= @vehicle.category_id %>
 </p>
 <%= like(@vehicle) %>
-
 <p><%= @vehicle.votes.count %> <%= (@vehicle.votes.count) <= 1 ? "Vote" : "Votes" %></p>
-
 <%= edit_back %>
-

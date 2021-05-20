@@ -32,7 +32,21 @@ Postgres: >=9.5
 
 1. git clone `git@github.com:Addis0943/Ethiopian_cars.git`
 
-### Setup
+### Image Processor
+
+ImageMagick must be installed and Paperclip must have access to it. To ensure that it does, on your command line, run which convert (one of the ImageMagick utilities). This will give you the path where that utility is installed. For example, it might return /usr/local/bin/convert. So if imagemagic not installed use the following commands to install:
+
+If you're on Mac Os X, you will want to run the following with Hombrew:
+
+```
+brew install imagemagick
+```
+
+If you are on Ubuntu (or any Debian base Linux distribution), you'll want to run the following with apt-get:
+
+```
+sudo apt-get install imagemagick -y
+```
 
 Install gems with:
 
