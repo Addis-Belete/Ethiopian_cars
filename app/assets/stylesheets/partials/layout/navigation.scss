@@ -16,10 +16,11 @@ nav {
       box-sizing: border-box;
       width: 60%;
       margin-left: 20%;
-
+  
       li {
+		
         .home {
-          color: #fa8442;
+          color: #fa8442 !important;
         }
 
         .login {
