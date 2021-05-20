@@ -8,7 +8,6 @@ gem "devise"
 gem "font-awesome-rails"
 gem "jquery-rails"
 gem "paperclip", "~> 6.0.0"
-gem "aws-sdk", "~> 3"
 
 gem "rubocop", ">= 1.0", "< 2.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
