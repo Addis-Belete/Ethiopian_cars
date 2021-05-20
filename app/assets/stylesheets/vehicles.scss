@@ -52,7 +52,6 @@
 @mixin vehicle_condition {
   font-size: 14px;
   padding-top: 20px;
-
 }
 
 @mixin details_one {
@@ -63,16 +62,52 @@
 @mixin details_two {
   color: #f9a318;
 }
+// car category page
+.car_category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
+  div {
+    img {
+      min-width: 100%;
+    }
+  }
+
+  .detail {
+    @include detail;
+
+    .category_name {
+      @include category_title;
+    }
+
+    .car_name {
+      @include car_title;
+    }
+
+    .vehicle_condition {
+      @include vehicle_condition;
+    }
+
+    .details {
+      @include details_one;
+
+      .detail {
+        @include details_two;
+      }
+    }
+  }
+}
+//main page
 .popular {
   .popular_image {
     margin-top: -3%;
-max-width: 100%;
-height: auto;
-img{
-min-width: 100%;
-height: auto;
-}
+    max-width: 100%;
+    height: auto;
+
+    img {
+      min-width: 100%;
+      height: auto;
+    }
   }
 
   .popular_title {
@@ -100,15 +135,14 @@ height: auto;
   @include car_category;
 
   .car {
-.car_image{
-img{
-min-width: 100%;
+    .car_image {
+      img {
+        min-width: 100%;
+      }
+    }
 
-}
-}
     .c_car {
       @include category_name;
-
     }
 
     .car_name {
@@ -117,12 +151,12 @@ min-width: 100%;
   }
 
   .suvs {
-.suvs_image{
-img{
-min-width: 100%;
+    .suvs_image {
+      img {
+        min-width: 100%;
+      }
+    }
 
-}
-}
     .c_suvs {
       @include category_name;
     }
@@ -133,11 +167,12 @@ min-width: 100%;
   }
 
   .buses {
-.bus_image{
-img{
-min-width: 100%;
-}
-}
+    .bus_image {
+      img {
+        min-width: 100%;
+      }
+    }
+
     .c_bus {
       @include category_name;
     }
@@ -148,11 +183,12 @@ min-width: 100%;
   }
 
   .trucks {
-.truck_image{
-img{
-min-width: 100%;
-}
-}
+    .truck_image {
+      img {
+        min-width: 100%;
+      }
+    }
+
     .c_trucks {
       @include category_name;
     }
@@ -163,49 +199,12 @@ min-width: 100%;
   }
 }
 
-// car category page
-.car_category {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-div{
-img{
-min-width: 100%;
-
-}
-}
-  .detail {
-    @include detail;
-
-    .category_name {
-      @include category_title;
-    }
-
-    .car_name {
-      @include car_title;
-
-
-    }
-
-    .vehicle_condition {
-      @include vehicle_condition;
-
-    }
-
-    .details {
-      @include details_one;
-
-      .detail {
-        @include details_two;
-      }
-    }
-  }
-}
 // links
 .link {
   margin-left: 31%;
   margin-right: auto;
 }
-section{
-background-color: #4d433f;
 
+section {
+  background-color: #4d433f;
 }

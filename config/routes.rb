@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :categories
   resources :vehicles
   get "/cars", to: "vehicles#car"
   get "/suvs", to: "vehicles#suv"
