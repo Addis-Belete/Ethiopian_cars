@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: addis-cloud
-  api_key: '639797236754167'
-  api_secret: Sws4wCUateRCxHI_DgHhN_cX124
+  cloud_name: ENV['CLOUD_NAME']
+  api_key: ENV['CLOUD_API_KEY']
+  api_secret: ENV['CLOUD_API_SECRET']
   enhance_image_tag: true
   static_file_support: false
 production:
-  cloud_name: addis-cloud
-  api_key: '639797236754167'
-  api_secret: Sws4wCUateRCxHI_DgHhN_cX124
+  cloud_name:  ENV['CLOUD_NAME']
+  api_key: ENV['CLOUD_API_KEY']
+  api_secret: ENV['CLOUD_API_SECRET']
   enhance_image_tag: true
   static_file_support: true
 test:
-  cloud_name: addis-cloud
-  api_key: '639797236754167'
-  api_secret: Sws4wCUateRCxHI_DgHhN_cX124
+  cloud_name: ENV['CLOUD_NAME']
+  api_key: ENV['CLOUD_API_KEY']
+  api_secret: ENV['CLOUD_API_SECRET']
   enhance_image_tag: true
   static_file_support: false
