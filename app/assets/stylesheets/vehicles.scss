@@ -27,7 +27,7 @@
 }
 
 @mixin detail {
-  width: 360px;
+  min-width: 100%;
   background-color: #fefefe;
   border: 1px solid whitesmoke;
   padding-left: 20px;
@@ -62,10 +62,52 @@
 @mixin details_two {
   color: #f9a318;
 }
+// car category page
+.car_category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
+  div {
+    img {
+      min-width: 100%;
+    }
+  }
+
+  .detail {
+    @include detail;
+
+    .category_name {
+      @include category_title;
+    }
+
+    .car_name {
+      @include car_title;
+    }
+
+    .vehicle_condition {
+      @include vehicle_condition;
+    }
+
+    .details {
+      @include details_one;
+
+      .detail {
+        @include details_two;
+      }
+    }
+  }
+}
+//main page
 .popular {
   .popular_image {
     margin-top: -3%;
+    max-width: 100%;
+    height: auto;
+
+    img {
+      min-width: 100%;
+      height: auto;
+    }
   }
 
   .popular_title {
@@ -93,6 +135,12 @@
   @include car_category;
 
   .car {
+    .car_image {
+      img {
+        min-width: 100%;
+      }
+    }
+
     .c_car {
       @include category_name;
     }
@@ -103,6 +151,12 @@
   }
 
   .suvs {
+    .suvs_image {
+      img {
+        min-width: 100%;
+      }
+    }
+
     .c_suvs {
       @include category_name;
     }
@@ -113,6 +167,12 @@
   }
 
   .buses {
+    .bus_image {
+      img {
+        min-width: 100%;
+      }
+    }
+
     .c_bus {
       @include category_name;
     }
@@ -123,6 +183,12 @@
   }
 
   .trucks {
+    .truck_image {
+      img {
+        min-width: 100%;
+      }
+    }
+
     .c_trucks {
       @include category_name;
     }
@@ -133,37 +199,16 @@
   }
 }
 
-// car category page
-.car_category {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-
-  .detail {
-    @include detail;
-
-    .category_name {
-      @include category_title;
-    }
-
-    .car_name {
-      @include car_title;
-    }
-
-    .vehicle_condition {
-      @include vehicle_condition;
-    }
-
-    .details {
-      @include details_one;
-
-      .detail {
-        @include details_two;
-      }
-    }
-  }
-}
 // links
 .link {
   margin-left: 31%;
   margin-right: auto;
+}
+
+section {
+  background-color: #4d433f;
+}
+
+.container1 {
+  margin-bottom: 10%;
 }
