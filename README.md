@@ -10,6 +10,10 @@ Ethio-cars is built by taking lifestyle webpage as reference. I used the layout 
 ![Ethio-cars](app/assets/images/ethio_cars1.png)
 ![Ethio-cars](app/assets/images/ethio_cars2.png)
 
+## Video
+
+[video](https://www.loom.com/share/e7f72b7b7b2240139de6f87493936c83)
+
 ## Live Demo
 
 [Ethio-cars](https://quiet-gorge-87738.herokuapp.com/)
@@ -31,7 +35,21 @@ Postgres: >=9.5
 
 1. git clone `git@github.com:Addis0943/Ethiopian_cars.git`
 
-### Setup
+### Image Processor
+
+ImageMagick must be installed and Paperclip must have access to it. To ensure that it does, on your command line, run which convert (one of the ImageMagick utilities). This will give you the path where that utility is installed. For example, it might return /usr/local/bin/convert. So if imagemagic not installed use the following commands to install:
+
+If you're on Mac Os X, you will want to run the following with Hombrew:
+
+```
+brew install imagemagick
+```
+
+If you are on Ubuntu (or any Debian base Linux distribution), you'll want to run the following with apt-get:
+
+```
+sudo apt-get install imagemagick -y
+```
 
 Install gems with:
 
