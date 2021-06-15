@@ -19,11 +19,11 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: "MyMovies.dev",
-      title: "MyMovies",
+      title: "Ethio-cars",
       reverse: true,
       separator: "|",
-      description: "The most popular movie website in the world",
-      keywords: "action, horror, drama",
+      description: "Created a desktop-only app where a user can sign up and/or sign in, select categories, and upload vehicle images with specifications. ",
+      keywords: "business",
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       icon: [
@@ -32,8 +32,8 @@ module ApplicationHelper
       ],
       og: {
         site_name: "MyMovies.dev",
-        title: "MyMovies",
-        description: "The most popular movie website in the world",
+        title: "Ethio-cars",
+        description: "Created a desktop-only app where a user can sign up and/or sign in, select categories, and upload vehicle images with specifications. ",
         type: "website",
         url: request.original_url,
         image: image_url("ethio_cars3.png"),
