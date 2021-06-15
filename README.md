@@ -2,7 +2,7 @@
 
 # Project Name: Ethio-cars
 
-Ethio-cars is built by taking lifestyle webpage as reference. I used the layout from the lifestyle webpage but the content is different. Ethio-cars webpage is an online car selling platform. clients easily upload to the site the vehicle they want to sell with images and detailed vehicle conditions. and the buyer visits the page and selects the car they want to buy. and also the platform gives the visitor to like the vehicle they interested in. the vehicle that has most likes appear on the top of the homepage.
+Created a desktop-only app where a user can sign up and/or sign in, select categories, and upload vehicle images with specifications. A user can vote a vehicle interested in and the vehicle that has more votes displayed on the top of the home page. Cloudinary used for storage.
 
 ## Screenshots
 
