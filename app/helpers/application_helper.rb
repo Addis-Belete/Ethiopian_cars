@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: "MyMovies.dev",
+      site: "heroku.com",
       title: "Ethio-cars",
       reverse: true,
       separator: "|",
