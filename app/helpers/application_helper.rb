@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: "heroku.com",
+      site: "https://quiet-gorge-87738.herokuapp.com/",
       title: "Ethio-cars",
       reverse: true,
       separator: "|",
@@ -31,7 +31,7 @@ module ApplicationHelper
         { href: image_url("ethio_cars3.png"), rel: "apple-touch-icon", sizes: "180x180", type: "image/jpg" },
       ],
       og: {
-        site_name: "MyMovies.dev",
+        site_name: "https://quiet-gorge-87738.herokuapp.com/",
         title: "Ethio-cars",
         description: "Created a desktop-only app where a user can sign up and/or sign in, select categories, and upload vehicle images with specifications. ",
         type: "website",
