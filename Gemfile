@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem 'meta-tags'
 
 ruby '2.7.2'
 gem 'bootstrap_form'
